@@ -19,11 +19,6 @@ node('workers'){
                 imageTest.inside{
                     sh 'go test'
                 }
-            },
-            'Security Tests': {
-                imageTest.inside('-u root:root'){
-                    sh 'nancy /go/src/github/skyglass-watchlist/movies-parser/Gopkg.lock'
-                }
             }
         )
     }
