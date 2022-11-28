@@ -1,4 +1,4 @@
-def imageName = 'mlabouardy/movies-parser'
+def imageName = skyglass/movies-parser'
 def registry = 'https://registry.slowcoder.com'
 
 node('workers'){
@@ -22,7 +22,7 @@ node('workers'){
             },
             'Security Tests': {
                 imageTest.inside('-u root:root'){
-                    sh 'nancy /go/src/github/mlabouardy/movies-parser/Gopkg.lock'
+                    sh 'nancy /go/src/github/skyglass-watchlist/movies-parser/Gopkg.lock'
                 }
             }
         )
