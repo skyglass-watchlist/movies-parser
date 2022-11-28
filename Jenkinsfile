@@ -17,12 +17,8 @@ node('workers'){
             },
             'Unit Tests': {
                 imageTest.inside('-u root:root'){
-                    sh 'go test'
-                }
-            },
-            'Security Tests': {
-                imageTest.inside('-u root:root'){
-                    sh 'nancy /go/src/github/skyglass-watchlist/movies-parser/Gopkg.lock'
+                    sh 'go test -coverprofile=cover/cover.cov'
+                    sh 'go tool cover -html=cover/coverage.cov -o coverage.html'
                 }
             }
         )
