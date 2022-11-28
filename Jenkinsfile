@@ -16,7 +16,7 @@ node('workers'){
                 }
             },
             'Unit Tests': {
-                imageTest.inside{
+                imageTest.inside('-u root:root'){
                     sh 'go test'
                 }
             }
