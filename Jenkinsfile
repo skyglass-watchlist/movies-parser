@@ -17,8 +17,7 @@ node('workers'){
             },
             'Unit Tests': {
                 imageTest.inside('-u root:root'){
-                    sh 'go test -coverprofile=cover/cover.cov'
-                    sh 'go tool cover -html=cover/coverage.cov -o coverage.html'
+                    sh 'go test'
                 }
             }
         )
