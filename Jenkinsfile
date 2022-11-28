@@ -1,4 +1,4 @@
-def imageName = skyglass/movies-parser'
+def imageName = 'skyglass/movies-parser'
 def registry = 'https://registry.slowcoder.com'
 
 node('workers'){
