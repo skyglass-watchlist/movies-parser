@@ -121,7 +121,7 @@ func main() {
 		rawMovie := Movie{}
 		json.Unmarshal([]byte(*respSQS.Messages[0].Body), &rawMovie)
 
-		url := fmt.Sprintf("https://www.imdb.com/title/%s", rawMovie.ID)
+		url := fmt.Sprintf("https://www.omdbapi.com/?apikey=209b21fc&i=%s", rawMovie.ID)
 		reqHttp, err := http.NewRequest("GET", url, nil)
 		if err != nil {
 			log.Fatal(err)
